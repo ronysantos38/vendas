@@ -1,0 +1,75 @@
+<div class="container p-5" >
+    <div >
+      <div   >
+        <h6>{{ tituloFormulario }}</h6>
+        <hr />
+  
+        <form [formGroup]="formulario" (ngSubmit)="EnviarFormulario()">
+       
+
+
+          <div class="form-group" >
+            <label>Produto</label>
+            <mat-form-field >
+              <mat-select  [(value)]="this.produto_id" 
+              (selectionChange)="valorProduto($event.value)">                   
+                <mat-option   
+                              *ngFor="let cam of produtosFilial" selected [value]="cam.produtoid">
+                  {{cam.nomeProduto}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field> 
+          </div>
+          
+            <div  class="form-group">
+              <label>Filial</label>
+              <mat-form-field >
+                <mat-select  [(value)]="this.filial_id" >                   
+                  <mat-option   
+                                *ngFor="let cam of filiais" selected [value]="cam.filialid">
+                    {{cam.nome}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>   
+            </div>
+            
+
+            <div>
+              <label>Quantidade</label>
+              <input type="text" class="form-control form-control-sm"     formControlName="quantidade" />     
+            </div>  
+
+      
+          <div class="form-group">
+            <label>Valor</label>
+            <input type="text"  class="form-control form-control-sm"  formControlName="valor" readonly/>
+            
+          </div>
+  
+          
+          <div class="container">
+            <div class="row">
+              <div>
+                <button type="submit" class="btn btn-sm btn-outline-secondary">
+                  Salvar
+                </button>             
+
+              </div>
+              <div class="container p-80" >
+               
+                <button mat-mini-fab color="primary" 
+                
+
+                [mat-dialog-close] matTooltip="Fechar">
+                    <mat-icon style="align-items: right;">close</mat-icon>
+                </button>
+
+              </div>
+            </div>
+          </div>
+  
+  
+        </form>
+       </div> 
+    </div>
+</div>
