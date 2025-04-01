@@ -1,0 +1,31 @@
+
+.primary {
+  color:#4caf50 green;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#container {
+  width:100%;
+}
+
+#left {
+  float:left;
+  height: 20px;
+  margin: 5px;
+}
+
+#center {
+  display: inline-block;
+  margin:0 auto;
+  width:100px;
+  height: 20px;
+}
+
+#right {
+  float:right;
+  width:25px;
+  height: 20px;
+}

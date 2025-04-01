@@ -1,0 +1,30 @@
+<mat-toolbar style="align-items: center;">
+  <div id="container">
+    <div id="left"><span class="material-icons">flip_to_back</span></div>
+    <div id="center"><h3 mat-dialog-title>{{ obj.title }}</h3></div>
+     <div id="right"><button style="width: 30px; height: 30px;" mat-mini-fab color="primary"
+       [mat-dialog-close] matTooltip="Fechar"><mat-icon style="font-size: 13px;">close</mat-icon></button></div>
+        
+  </div>
+</mat-toolbar>
+<mat-divider></mat-divider>
+
+<br>
+<div style="align-items: left; height: 60px; ">
+  <table style="width: 100%;">
+    <th></th>
+    <th></th>
+    <td > 
+      <i class="material-icons" [ngStyle]="{'color': obj.tipoMesagem == 'close' ||  obj.tipoMesagem == 'error_outline'? 'red' : 'green' }" style="font-size: 30px;margin: 10px;">{{ obj.tipoMesagem }}</i>
+    </td>
+    <td style="float:left;"> 
+      <span style="font-size: 16px;">{{ obj.nome }}</span>
+    </td>
+  </table>
+  
+  
+</div>
+
+<mat-divider></mat-divider>
+
+ 
