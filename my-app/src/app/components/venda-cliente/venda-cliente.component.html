@@ -1,0 +1,108 @@
+<mat-toolbar style="width: 890px; margin-bottom: 10px;">
+    <span class="material-icons">flip_to_back</span>
+    <h1><span style="margin: 10px;">Venda por Cliente</span></h1>
+    <div style="margin-left: 70%;">
+     <button style="width: 30px; height: 30px;" mat-mini-fab color="primary" [mat-dialog-close] matTooltip="Fechar">
+        <mat-icon style="font-size: 13px;">close</mat-icon>
+      </button>
+    
+    </div>
+  </mat-toolbar>
+
+  <form [formGroup]="regForm1">
+
+    <div  class="form-group">
+      <label>Cliente</label>
+      <mat-form-field >
+        <mat-select  [(value)]="this.cliente_id" 
+        (selectionChange)="selecionaFilial($event.value)" 
+        >   
+          <mat-option value="0">Todos</mat-option>                
+          <mat-option  
+                        *ngFor="let cam of clientes" selected [value]="cam.clienteid">
+            {{cam.nome}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>   
+    </div>
+  
+    <mat-table [dataSource]="dsVendaFilial"  class="mat-elevation-z8">
+
+      <ng-container matColumnDef="produto">
+        <mat-header-cell *matHeaderCellDef> Produto </mat-header-cell>        
+        <mat-cell  *matCellDef="let element">{{element.nomeProduto}}</mat-cell>
+      </ng-container>
+    
+      <!-- Name Column -->
+      <ng-container matColumnDef="filial">   
+        <mat-header-cell *matHeaderCellDef> Filial </mat-header-cell>        
+        <mat-cell  *matCellDef="let element">{{element.nomeFilial}}</mat-cell>
+      </ng-container>
+    
+      <!-- Weight Column -->
+      <ng-container matColumnDef="valor">        
+        <mat-header-cell *matHeaderCellDef> Valor </mat-header-cell>        
+        <mat-cell  *matCellDef="let element">{{element.valor}}</mat-cell>
+      </ng-container>
+    
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="data">        
+          <mat-header-cell *matHeaderCellDef> Data Venda </mat-header-cell>        
+          <mat-cell  *matCellDef="let element">{{element.dataVenda | date: 'dd-MM-yyyy'}}</mat-cell>
+        </ng-container>
+      
+        <ng-container matColumnDef="nome">        
+          <mat-header-cell *matHeaderCellDef> Cliente </mat-header-cell>        
+          <mat-cell  *matCellDef="let element">{{element.nomeCliente}}</mat-cell>
+        </ng-container>
+      
+
+      <ng-container matColumnDef="quantidade">      
+        <mat-header-cell *matHeaderCellDef> Quantidade </mat-header-cell>        
+        <mat-cell  *matCellDef="let element">{{element.qtde}}</mat-cell>
+      </ng-container>
+      
+      
+      <ng-container matColumnDef="desconto">
+        <mat-header-cell *matHeaderCellDef> Desconto </mat-header-cell>        
+        <mat-cell  *matCellDef="let element">{{element.desconto}}</mat-cell>
+      </ng-container>
+    
+      <ng-container matColumnDef="total">
+        <mat-header-cell *matHeaderCellDef> Total </mat-header-cell>        
+        <mat-cell  *matCellDef="let element">{{element.total}}</mat-cell>
+      </ng-container>
+      
+
+      <ng-container matColumnDef="acoes">
+       <!--    <button mat-raised-button matTooltip="Excluir"  (click)="ExcluirVenda(element.id)">  <mat-icon>delete</mat-icon></button>    -->
+
+        <mat-header-cell *matHeaderCellDef> acoes </mat-header-cell>        
+        <mat-cell  *matCellDef="let element"></mat-cell>
+
+      </ng-container>
+
+<!--
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+   
+  --> 
+
+    <div style="align-items: center;">
+      <ng-container matColumnDef="paginator" style="width: 100%;">
+        <mat-cell *matFooterCellDef="let row" colspan="3">
+          <mat-paginator #paginator [showFirstLastButtons]="true" [pageSize]="5" [pageSizeOptions]="[1, 5, 10, 20, 50, 100]"></mat-paginator>
+        </mat-cell>
+      </ng-container>
+    </div>
+
+    <mat-row *matRowDef="let row; columns: displayedColumns;" matRipple class="element-row"></mat-row>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-footer-row *matFooterRowDef="['paginator']; let row"></mat-footer-row>
+
+  </mat-table>
+
+
+  </form>

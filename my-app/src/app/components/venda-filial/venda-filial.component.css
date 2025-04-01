@@ -1,0 +1,217 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #legenda {  
+    margin-left: 50px;
+      
+  }
+  
+  .mat-table {
+    overflow: auto;
+  }
+  
+  #acoes {
+    align-items: center;
+  }
+  
+  .mat-column-nm_cluster_eva{
+    word-wrap: break-word !important;
+    white-space: unset !important;
+    flex: 0 0 240px !important;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    }
+    
+    .mat-column-sclu_nm_sub_cluster_eva{
+    word-wrap: break-word !important;
+    white-space: unset !important;
+    flex: 0 0 450px !important;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    }
+    
+    .mat-column-sclu_in_situacao{
+    word-wrap: break-word !important;
+    white-space: unset !important;
+    flex: 0 0 150px !important;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    }
+    
+    .mat-column-cd_sicar_projeto{
+      word-wrap: break-word !important;
+      white-space: unset !important;
+      flex: 0 0 350px !important;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      word-break: break-word;
+      -ms-hyphens: auto;
+      -moz-hyphens: auto;
+      -webkit-hyphens: auto;
+      hyphens: auto;
+    }
+    
+    .mat-column-sclu_ds_sub_cluster_eva{
+      word-wrap: break-word !important;
+      white-space: unset !important;
+      flex: 0 0 400px !important;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      word-break: break-word;
+      -ms-hyphens: auto;
+      -moz-hyphens: auto;
+      -webkit-hyphens: auto;
+      hyphens: auto;
+    }
+    
+    .mat-column-salvar{
+      word-wrap: break-word !important;
+      white-space: unset !important;
+      justify-content: right;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      word-break: break-word;
+      -ms-hyphens: auto;
+      -moz-hyphens: auto;
+      -webkit-hyphens: auto;
+      hyphens: auto;  
+    }
+    
+    .mat-column-acoes{
+      word-wrap: break-word !important;
+      white-space: unset !important;
+      justify-content: right;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      word-break: break-word;
+      -ms-hyphens: auto;
+      -moz-hyphens: auto;
+      -webkit-hyphens: auto;
+      hyphens: auto;
+    }
+  
+    .input {
+      vertical-align: baseline;
+      height: 30px;
+      width: 300px;
+    }
+    
+    adicionarProjeto {
+      border: 0;
+      margin-left: 20px;
+    }
+    .select-all{
+      margin: 5px 17px;
+    }
+    
+    .example-container {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .example-header {
+      min-height: 84px;
+      padding: 8px 24px 0;
+    }
+    
+    .mat-form-field {
+      font-size: 14px;
+      width: 100%;
+    }
+    
+    .mat-table {
+      overflow: hidden;
+    }
+    
+    #acoes {
+      align-items: left;
+    }
+    
+    #buscar{
+      margin: 30px;  
+    }
+    
+    adicionarPoco {
+      border: 0;
+      margin-left: 20px;
+    } 
+    
+    .mat-table {
+      width: 100%;   
+    }
+    
+    mat-select {
+      width: 100%;
+    }
+    
+    .make-color {
+        background-color: #f5f5f5;
+        color: white;
+    }
+    .example-container {
+      display: flex;
+      flex-direction: column;
+      min-width: 300px;
+    }
+    
+    .example-header {
+      min-height: 64px;
+      padding: 8px 24px 0;
+    }
+  
+    mat-select-value {
+    
+      display: table-cell;
+      width: 100%;
+      white-space: nowrap;
+      justify-content:left;
+    
+    }
+    mat-header-cell {
+      display:flex;
+      justify-content:left; 
+    }
+    
+    .mat-default {
+      word-wrap: break-word !important;
+      white-space: unset !important;
+      flex: 0 0 28% !important;
+      width: auto !important;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+    
+      word-break: break-word;
+    
+      -ms-hyphens: auto;
+      -moz-hyphens: auto;
+      -webkit-hyphens: auto;
+      hyphens: auto;
+    }  
+    
+    .margeall {
+      margin: 10px;
+    }
+    
+    .space {
+      margin-right: 25px;
+      margin-left: 100px;
+      font-size: 13px;
+      font-family: Arial, Helvetica, sans-serif;    
+    }

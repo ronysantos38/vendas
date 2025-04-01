@@ -1,0 +1,110 @@
+<div class="container p-5" *ngIf="visibilidadeTabela">
+    <div class="border boder-light rounded p-5">
+      <div>
+        <button type="button" class="btn btn-sm btn-secondary" (click)="ExibirFormularioCadastro()" >
+          Novo Produto
+        </button>
+      </div>
+  
+      <hr />
+    </div>
+  
+    <table class="table table-striped table-hover table-sm" *ngIf="produtosFilial">
+      <tr class="thead-light">
+        <th>Nome do Produto</th>      
+        <th>Nome da Filial</th>   
+        <th>Valor</th>   
+        <th>Ações</th>
+      </tr>
+  
+      <tr *ngFor="let produto of produtosFilial">
+        <td>{{ produto.nomeProduto }}</td>
+        <td>{{ produto.nomeFilial }}</td>
+        <td>{{ produto.valor}}</td>
+        
+        <td>
+          
+          <button type="button" class="btn btn-sm btn-outline-info"  (click)="ExibirFormularioAtualizacao(produto.produtoid)">
+            Atualizar</button
+          >|
+          <button type="button" class="btn btn-sm btn-outline-danger" (click)="ExibirConfirmacaoExclusao(produto.produtoid, produto.nomeProduto , conteudoModal)" >
+            Excluir
+          </button>
+        </td>
+      </tr>
+  
+    </table>
+  
+  </div>
+  
+  
+  
+  
+  <div class="container p-5" *ngIf="visibilidadeFormulario">
+      <div class="row">
+        <div class="col-6 border boder-light rounded p-5 shadow" *ngIf="formulario">
+          <h6>{{ tituloFormulario }}</h6>
+          <hr />
+    
+          <form [formGroup]="formulario" (ngSubmit)="EnviarFormulario()">
+            <div class="form-group">
+              <label>Nome</label>
+              <input type="text"  class="form-control form-control-sm"  formControlName="nome" />
+            </div>
+            
+              <div  class="form-group">
+                <label>Filial</label>
+                <mat-form-field >
+                  <mat-select  [(value)]="this.filial_id" >                   
+                    <mat-option   (change)="toggleSelection(cam)" 
+                                  *ngFor="let cam of filiais" selected [value]="cam.filialid">
+                      {{cam.nome}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>   
+              </div>
+              
+        
+            <div class="form-group">
+              <label>Valor</label>
+              <input type="text"  class="form-control form-control-sm"  formControlName="valor" />
+              
+            </div>
+    
+            
+            <div class="container">
+              <div class="row">
+                <div>
+                  <button type="submit" class="btn btn-sm btn-outline-secondary">
+                    Salvar
+                  </button>
+                </div>
+                <div class="pl-1">
+                  <button type="button" class="btn btn-sm btn-light" (click)="Voltar()">Voltar</button>
+                </div>
+              </div>
+            </div>
+    
+    
+          </form>
+         </div> 
+      </div>
+  </div>
+  
+  
+      <ng-template #conteudoModal>
+        <div class="modal-header">
+          <h4 class="modal-title pull-left">Confirmação de Exclusão</h4>
+          <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Prosseguir com a exclusão do(a) {{nomeProduto}}
+        </div>
+    
+        <div class="modal-footer">
+            <button type="button" class="btn btn-light" (click)="modalRef?.hide()">Não</button>
+            <button type="button" class="btn btn-outline-danger" (click)="ExcluirPessoa(produtoid)">Sim</button>
+        </div>
+      </ng-template>
